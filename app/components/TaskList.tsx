@@ -62,7 +62,7 @@ const TaskList = () => {
           <Input
             value={newTaskTitle}
             onChange={(e) => setNewTaskTitle(e.target.value)}
-            placeholder="Add a task with a pomodoro"
+            placeholder="Add a task with"
           />
           <Button className={styles.button} onClick={addTask}>Add</Button>
         </div>
@@ -77,7 +77,6 @@ const TaskList = () => {
               </div>
               <div className={styles.timerContainer}>
                 <PomodoroTimer 
-                  taskId={task.id} 
                   initialTime={25 * 60} 
                   onTimerComplete={() => handleTimerComplete(task.id)} 
                 />
