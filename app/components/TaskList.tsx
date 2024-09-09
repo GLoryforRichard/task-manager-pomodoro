@@ -67,24 +67,25 @@ const TaskList = () => {
           <Button className={styles.button} onClick={addTask}>Add</Button>
         </div>
         <ul className={styles.taskList}>
-          {tasks.map(task => (
-            <li key={task.id} className={styles.taskItem}>
-              <div className={styles.taskInfo}>
-                <span className={styles.taskTitle}>{task.title}</span>
-                <span className={styles.taskProgress}>
-                  Progress: {task.pomodoroCount}/{task.totalPomodoro} Pomodoros
-                </span>
-              </div>
-              <div className={styles.timerContainer}>
-                <PomodoroTimer 
-                  initialTime={25 * 60} 
-                  onTimerComplete={() => handleTimerComplete(task.id)} 
-                />
-              </div>
-              <Button className={styles.deleteButton} onClick={() => deleteTask(task.id)}>Delete</Button>
-            </li>
-          ))}
-        </ul>
+  {tasks.map(task => (
+    <li key={task.id} className={styles.taskItem}>
+      <div className={styles.taskInfo}>
+        <span className={styles.taskTitle}>{task.title}</span>
+        <span className={styles.taskProgress}>
+          Progress: {task.pomodoroCount}/{task.totalPomodoro} Pomodoros
+        </span>
+      </div>
+      <div className={styles.timerContainer}>
+        <PomodoroTimer 
+          initialTime={25 * 60} 
+          onTimerComplete={() => handleTimerComplete(task.id)} 
+        />
+      </div>
+      <Button className={styles.deleteButton} onClick={() => deleteTask(task.id)}>Delete</Button>
+    </li>
+  ))}
+</ul>
+
       </div>
     </div>
   );
