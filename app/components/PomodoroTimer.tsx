@@ -5,12 +5,11 @@ import { Button } from '@/components/ui/button';
 import styles from '../style/PomodoroTimer.module.css';
 
 interface PomodoroTimerProps {
-  taskId: number;
   initialTime: number;
   onTimerComplete: () => void;
 }
 
-const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ taskId, initialTime, onTimerComplete }) => {
+const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ initialTime, onTimerComplete }) => {
   const [timeRemaining, setTimeRemaining] = useState<number>(initialTime);
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isPaused, setIsPaused] = useState<boolean>(false);
